@@ -172,3 +172,72 @@ A jelenlegi üzleti folyamatok modellje biztosítja, hogy az ügyfelek kényelme
 | 1.0v   | Szabad mosógépek megtekintése          | Az aktuálisan elérhető mosógépek valós idejű megjelenítése.   |
 | 1.0v   | Saját foglalások megtekintése          | A bejelentkezett felhasználó saját foglalásainak listázása.   |
 | 1.0v   | Adminisztrációs felület                | Mosógépek állapotának kezelése és foglalási adatok karbantartása. |
+
+## 7. Use cases
+
+### 7.1. Szereplők
+- **Felhasználó**
+- **Adminisztrátor**
+
+### 7.2. Felhasználó használati esetei
+
+#### Regisztráció
+A felhasználó regisztrál a honlapon. A regisztráció során megadja az e-mail címét (mely később azonosítóként fog szolgálni), nevét és jelszavát. A szolgáltatás feltétele a regisztráció.
+
+#### Bejelentkezés
+A felhasználó a regisztrációt követően bejelentkezik, és megkezdi a program használatát. Az azonosításhoz meg kell adni az e-mail cím és jelszó párost, amellyel regisztrált a rendszerbe.
+
+#### Foglalások létrehozása
+A felhasználó új időpontot foglalhat egy szabad mosógépre. A foglalás során ki kell választania:
+- a mosógépet,
+- a dátumot,
+- a kezdési időpontot.
+
+#### Foglalások megtekintése
+A felhasználó a rendszerben megtekintheti az összes korábbi és aktuális foglalását, beleértve a következő adatokat:
+- foglalás dátuma,
+- kezdési és befejezési időpont,
+- mosógép azonosítója.
+
+#### Foglalások törlése
+A felhasználó törölheti meglévő foglalását, ha az adott időpont még nem telt el.
+
+#### Saját adatok módosítása
+A felhasználó módosíthatja a regisztráció során megadott adatait, beleértve az e-mail címet és jelszót.
+
+#### Regisztráció törlése
+A felhasználó véglegesen törölheti regisztrációját és az összes kapcsolódó adatot a rendszerből.
+
+### 7.3. Adminisztrátor használati esetei
+
+#### Bejelentkezés
+Az adminisztrátor bejelentkezik a számára kialakított felületre. Az azonosításhoz meg kell adnia az e-mail címét és jelszavát, amit a telepítőtől kapott.
+
+#### Mosógépek kezelése
+Az adminisztrátor hozzáadhat, módosíthat vagy törölhet mosógépeket a rendszerből. Ezek a műveletek biztosítják a rendszer naprakész állapotát.
+
+#### Foglalási adatok kezelése
+Az adminisztrátor megtekintheti és szükség esetén törölheti vagy módosíthatja a felhasználók foglalásait.
+
+#### Felhasználók listájának megtekintése
+Az adminisztrátor megtekintheti a regisztrált felhasználók listáját, beleértve az alábbi adatokat:
+- felhasználónév,
+- e-mail cím,
+- regisztráció dátuma.
+
+#### Felhasználók törlése
+Az adminisztrátor törölheti a felhasználók hozzáférését a rendszerhez.
+
+#### Adminisztrátor hozzáadása
+Az adminisztrátor jogosult új adminisztrátorokat regisztrálni a rendszerbe.
+
+#### Adminisztrátor törlése
+Az adminisztrátor más adminisztrátorok hozzáférését törölheti.
+
+#### Jelszó módosítása
+Az adminisztrátor megváltoztathatja saját jelszavát.
+
+#### Statisztikák megtekintése
+Az adminisztrátor automatikusan generált statisztikai adatokat tekinthet meg, például:
+- a mosógépek kihasználtságát,
+- a foglalások számát adott időszakokra lebontva.
