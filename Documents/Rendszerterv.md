@@ -80,3 +80,100 @@ A **SpeedWash** rendszer célja, hogy a felhasználók gyorsan és egyszerűen f
 - **Adminisztrátor**:
   - Mosógépek adatainak kezelése.
   - Foglalások törlése.
+  
+### 3.2 Üzleti folyamatok
+
+#### Foglalás kezelése
+
+| Lépcsők                  | Leírás                                       |
+| ------------------------ | -------------------------------------------- |
+| Mosógép kiválasztása     | A felhasználó kiválasztja a kívánt mosógépet.|
+| Időpont foglalása         | Csak szabad időpontok ajánlottak fel.       |
+| Foglalás rögzítése        | Az adatbázisban tárolódik a foglalás.       |
+
+#### Felhasználói jogosultságok
+
+| Funkció                   | Leírás                                      |
+| ------------------------- | ------------------------------------------ |
+| Bejelentkezés             | Email és jelszó hitelesítésével.            |
+| Foglalások lekérdezése    | A felhasználó megtekintheti saját foglalásait.|
+| Foglalások törlése        | A felhasználó törölheti saját foglalását.   |
+
+---
+
+## 4. Követelmények
+
+### Funkcionális követelmények
+
+- Felhasználók regisztrációja.
+- Felhasználók bejelentkezése.
+- Mosógépek állapotának valós idejű megtekintése.
+- Foglalások kezelése (létrehozás, törlés).
+
+### Nemfunkcionális követelmények
+
+- Reszponzív felület mobil és asztali eszközökre.
+- Gyors adatfeldolgozás és megjelenítés.
+- HTTPS protokollon keresztüli biztonságos adatátvitel.
+
+---
+
+## 5. Adatbázisterv
+
+### Adattáblák
+
+#### Felhasználók tábla
+
+| Mezőnév    | Típus        | Megjegyzés             |
+| ---------- | ------------ | ---------------------- |
+| id         | INT          | Elsődleges kulcs       |
+| username   | VARCHAR(50)  | Felhasználónév         |
+| email      | VARCHAR(100) | Email cím              |
+| password   | VARCHAR(255) | Jelszó (titkosítva)    |
+
+#### Mosógépek tábla
+
+| Mezőnév    | Típus        | Megjegyzés             |
+| ---------- | ------------ | ---------------------- |
+| id         | INT          | Elsődleges kulcs       |
+| name       | VARCHAR(50)  | Mosógép neve           |
+| status     | VARCHAR(20)  | Szabad vagy foglalt    |
+
+#### Foglalások tábla
+
+| Mezőnév    | Típus        | Megjegyzés             |
+| ---------- | ------------ | ---------------------- |
+| id         | INT          | Elsődleges kulcs       |
+| machine_id | INT          | Hivatkozás a mosógépre |
+| user_id    | INT          | Hivatkozás a felhasználóra |
+| start_time | DATETIME     | Foglalás kezdete       |
+| end_time   | DATETIME     | Foglalás vége          |
+
+---
+
+## 6. Fizikai környezet
+
+### 6.1 Szoftverek
+
+- **Webszerver**: Apache
+- **Adatbázis-kezelő**: MySQL
+- **Kliensoldali technológiák**: HTML, CSS, JavaScript
+
+### 6.2 Hardver követelmények
+
+- Szerver: 4 GB RAM, 2 CPU mag
+- Kliens: Bármely modern böngészővel kompatibilis eszköz
+
+---
+
+## 7. Tesztterv
+
+### Tesztelési lépések
+
+1. **Bejelentkezés tesztelése**:
+   - Helyes és helytelen adatokkal.
+2. **Foglalás létrehozásának tesztelése**:
+   - Szabad időpont kiválasztása.
+   - Időpontütközések kezelése.
+3. **Foglalások törlésének tesztelése**:
+   - Csak a saját foglalások törölhetők.
