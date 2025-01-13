@@ -160,3 +160,15 @@ Az adminisztrátorok ellenőrizhetik és szükség esetén manuálisan módosít
    - Több ügyfél egyidejű foglalása esetén biztosítani kell, hogy ne alakuljanak ki időpontütközések.
 
 A jelenlegi üzleti folyamatok modellje biztosítja, hogy az ügyfelek kényelmesen és gyorsan használhassák a rendszert, miközben az adminisztrátorok számára egyszerűvé teszi a mosógépek állapotának és foglalásainak kezelését.
+
+## 6. Igényelt üzleti folyamatok modellje
+
+| Verzió | Üzleti folyamat                        | Modell                                                        |
+|--------|----------------------------------------|-------------------------------------------------------------- |
+| 1.0v   | Regisztráció                           | A felhasználók regisztrálásának lehetősége a rendszerbe.      |
+| 1.0v   | Bejelentkezés                          | A felhasználók bejelentkezésének lehetősége a rendszerbe.     |
+| 1.0v   | Foglalások rögzítése és módosítása     | Új foglalások rögzítése és meglévő foglalások módosítása.     |
+| 1.0v   | Foglalások törlése                     | Meglévő foglalások törlése a rendszerből.                     |
+| 1.0v   | Szabad mosógépek megtekintése          | Az aktuálisan elérhető mosógépek valós idejű megjelenítése.   |
+| 1.0v   | Saját foglalások megtekintése          | A bejelentkezett felhasználó saját foglalásainak listázása.   |
+| 1.0v   | Adminisztrációs felület                | Mosógépek állapotának kezelése és foglalási adatok karbantartása. |
