@@ -100,3 +100,63 @@ A rendszer célja, hogy a mosodák és a felhasználók közötti kommunikáció
    - Az Európai Unió kiberbiztonsági irányelve, amely a hálózati és információs rendszerek biztonságának fokozását célozza.
 
 A fent említett rendeletek és irányelvek biztosítják, hogy a rendszer megfeleljen a jogszabályi követelményeknek és szabványoknak, miközben garantálja a felhasználók adatainak biztonságát és a szolgáltatások megbízhatóságát.
+
+## 5. Jelenlegi üzleti folyamatok modellje
+
+### Felhasználók (mosodai ügyfelek)
+
+A rendszer fő célcsoportját azok az ügyfelek képezik, akik mosodai szolgáltatásokat szeretnének igénybe venni gyorsan és kényelmesen, anélkül hogy a helyszínen kellene időpontot egyeztetniük. A felhasználók az online platformon keresztül foglalhatnak időpontot, megtekinthetik a szabad mosógépeket, és kezelhetik saját foglalásaikat.
+
+### Mosodai online szolgáltatás nyújtói
+
+A mosodák adminisztrátorai, akik felügyelik a mosógépek állapotát, karbantartják az adatbázist, és szükség esetén manuálisan módosíthatják a foglalási adatokat.
+
+### Üzleti entitások
+
+- **Mosógépek**: Az elérhető mosógépek, melyek foglalhatók a rendszerben.
+- **Foglalások**: Az ügyfelek által rögzített időpontok, amelyek a mosógépek kihasználtságát mutatják.
+- **Felhasználók**: A regisztrált ügyfelek, akik hozzáférnek a foglalási rendszerhez.
+- **Időpontok**: Az egyes mosógépek foglalható időintervallumai.
+
+### Üzleti folyamatok
+
+#### Új foglalás létrehozása
+
+Az ügyfél a mosodai szolgáltatást igénybe veszi, és online időpontot foglal egy elérhető mosógépre. Az üzleti folyamat lépései:
+1. Az ügyfél kiválaszt egy mosógépet az aktuálisan elérhető gépek listájáról.
+2. Kiválaszt egy szabad időpontot az időpontválasztó segítségével.
+3. A rendszer ellenőrzi, hogy az időpont valóban szabad-e, és nem ütközik más foglalásokkal.
+4. Az időpontot a rendszer rögzíti az adatbázisban, és a mosógép állapotát „foglalt”-ra állítja az adott időszakra.
+5. Az ügyfél visszaigazolást kap a sikeres foglalásról.
+
+#### Foglalások megtekintése
+
+Az ügyfél megtekintheti a már meglévő foglalásait. Ez az alábbi lépéseket foglalja magában:
+1. Az ügyfél bejelentkezik a rendszerbe.
+2. A „Saját foglalások” nézetben megtekintheti az összes rögzített foglalását, beleértve a foglalások kezdő- és végidőpontját, valamint a mosógép nevét.
+3. Az adatok valós időben frissülnek, hogy az aktuális állapotot tükrözzék.
+
+#### Foglalások törlése
+
+Az ügyfél törölheti meglévő foglalását, például ha már nincs szüksége az időpontra. Az üzleti folyamat lépései:
+1. Az ügyfél kiválasztja a törölni kívánt foglalást a „Saját foglalások” nézetből.
+2. A rendszer ellenőrzi, hogy a foglalás törölhető-e (például az időpont nem múlt-e már el).
+3. A foglalás törlése után a mosógép állapota automatikusan „szabad”-ra áll vissza az adott időszakra vonatkozóan.
+
+#### Mosógépek állapotának kezelése
+
+Az adminisztrátorok ellenőrizhetik és szükség esetén manuálisan módosíthatják a mosógépek állapotát. Ez a következő lépéseket tartalmazza:
+1. Az adminisztrátor belép az adminisztrátori felületre.
+2. Kiválasztja a kívánt mosógépet a listából.
+3. Szükség esetén módosíthatja a gép állapotát (például karbantartás alatt állapotra).
+
+### Jelenlegi kihívások
+
+1. **Szabad időpontok kiválasztása**:
+   - A rendszernek biztosítania kell, hogy mindig csak a valós szabad időpontok jelenjenek meg az ügyfél számára.
+2. **Adatpontosság**:
+   - A foglalások és mosógépek állapotának folyamatos szinkronizálása szükséges a valós idejű frissítések érdekében.
+3. **Ütközések elkerülése**:
+   - Több ügyfél egyidejű foglalása esetén biztosítani kell, hogy ne alakuljanak ki időpontütközések.
+
+A jelenlegi üzleti folyamatok modellje biztosítja, hogy az ügyfelek kényelmesen és gyorsan használhassák a rendszert, miközben az adminisztrátorok számára egyszerűvé teszi a mosógépek állapotának és foglalásainak kezelését.
