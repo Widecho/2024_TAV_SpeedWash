@@ -47,3 +47,36 @@ A **SpeedWash** rendszer célja, hogy a felhasználók gyorsan és egyszerűen f
 | Hibák felderítése és javítása                       |
 
 ---
+### 2.2 Ütemterv
+
+| Funkció                   | Feladat                                    |
+| ------------------------- | ------------------------------------------ | 
+| Követelmény specifikáció  | Követelmény specifikáció elkészítése       |
+| Funkcionális specifikáció | Funkcionális specifikáció elkészítése      |
+| Rendszerterv              | Rendszerterv és képernyőtervek elkészítése | 
+| Adattárolás               | Adatmodell megtervezése és adatbázis létrehozása | 
+| Honlap                    | Frontend és backend integráció             | 
+| Tesztelés                 | Rendszer működésének ellenőrzése           |
+
+---
+
+### 2.3 Mérföldkövek
+
+| Mérföldkövek                                  |
+| ------------------------------------------- |
+| Projektmunkák és felelősségek kiosztása     |
+| Első működő prototípus bemutatása           |
+| Végleges projekt tesztelése és átadása      |
+
+---
+
+## 3. Üzleti folyamatok modellje
+
+### 3.1 Üzleti szereplők
+
+- **Regisztrált felhasználók**:
+  - Foglalások kezelése (új foglalás, foglalások törlése).
+  - Saját foglalások megtekintése.
+- **Adminisztrátor**:
+  - Mosógépek adatainak kezelése.
+  - Foglalások törlése.
