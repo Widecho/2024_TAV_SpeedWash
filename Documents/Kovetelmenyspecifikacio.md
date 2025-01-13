@@ -8,3 +8,32 @@ Jelenlegi helyzet
     A regisztráción keresztül lehessen értesíteni a felhasználókat az akciókról és egyéb érdemleges információkról.
     Az időpontfoglalás legyen egyértelmű. A foglalt időpontok ne jelenjenek meg a foglalási lehetőségek között.
     Idővel valószínűleg újabb fejlesztés várható, így a megrendelő olyan programot kér, amely viszonylag egyszerűen tovább bővíthető, fejleszthető a jövőben, akár más fejlesztők által is.
+
+Jelenlegi üzleti folyamatok
+    1.	Mosó- és szárítógépek
+        •	Nyilvántartás
+        •	Selejtezés, beszerzés
+        •	Karbantartás 
+    2.	Használatba adás 
+        •	érkezéskor tájékoztatás reklámfüzet segítségével
+        •	elérhetőségről szóbeli információ
+        •	kezdő és záró időpont vezetése Excel táblázatban
+
+Igényelt üzleti folyamatok,
+    1.	Online megjelenés
+        •	vonzó, barátságos arculat
+        •	egyszerű kezelhetőség
+        •	átláthatóság
+        •	informálás
+    2. Funkciók
+        •   regisztrálás
+        •   bejelentkezés
+        •   időpontfoglalás
+    
+A rendszerre vonatkozó szabályok
+    A web felület szabványos eszközökkel készüljön: html/css/javascript. Az azonosítás folyamán a jogszabályok betartása kötelező.
+
+Követelmény lista
+    • könnyű kezelhetőség
+    • egyszerű továbbfejleszthetőség
+    • letisztult megjelenés
