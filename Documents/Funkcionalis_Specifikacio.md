@@ -235,9 +235,28 @@ Az adminisztrátor jogosult új adminisztrátorokat regisztrálni a rendszerbe.
 Az adminisztrátor más adminisztrátorok hozzáférését törölheti.
 
 #### Jelszó módosítása
-Az adminisztrátor megváltoztathatja saját jelszavát.
+Az adminisztrátor megváltoztathatja saját jelszavát. Alaphelyzetbe állíthatja más felhasználók jelszavát, ha Ők azt kérvényezik.
 
 #### Statisztikák megtekintése
 Az adminisztrátor automatikusan generált statisztikai adatokat tekinthet meg, például:
 - a mosógépek kihasználtságát,
 - a foglalások számát adott időszakokra lebontva.
+
+## 8. Funkció - követelmény megfeleltetés
+
+| ID   | Verzió | Követelmény                                       | Funkció                                                                                   |
+|------|--------|--------------------------------------------------|------------------------------------------------------------------------------------------|
+| K05  | V1.0   | Egyszerűen használható kezelőfelület             | A legelterjedtebb internetböngészőkből használható, reszponzív felhasználói felület biztosítása. |
+| K12  | V1.0   | Foglalási értesítések                           | Felhasználók értesítése a közelgő foglalásokról (opcionális emailes értesítés). |
+| K03  | V1.0   | Mosógépek adminisztrációja                       | Mosógépek hozzáadása, törlése, és állapotának módosítása az adminisztrációs felületen keresztül. |
+| K01  | V1.0   | Foglalások adminisztrációja                      | Foglalások regisztrálása, törlése és módosítása az igényelt üzleti folyamatokban leírtak szerint. |
+| K08  | V1.0   | Bővíthetőség                                     | A kezelt adatok mennyiségének növelhetősége, a felhasználók számának bővítése, valamint új funkciók hozzáadásának lehetősége. |
+| K14  | V1.0   | Mosógépek karbantartásának nyilvántartása        | A mosógépek karbantartási időszakainak kezelése és ütközések elkerülése a foglalásokkal. |
+| K07  | V1.0   | Költséghatékony üzemeltetés                      | Az elterjedt, szabványos technológiák alkalmazásával alacsony fenntartási költségek biztosítása. |
+| K10  | V1.0   | Dátum-alapú foglalási lehetőség                  | A foglalások dátum szerinti szűrésének és időalapú ajánlásának biztosítása. |
+| K11  | V1.0   | Biztonságos felhasználói adatok kezelése         | Felhasználói adatok titkosított tárolása és biztonságos adatkezelési eljárások implementálása. |
+| K02  | V1.0   | Felhasználók adminisztrációja                    | Felhasználók regisztrálása, törlése és adataik módosítása az igényelt üzleti folyamatokban leírtak szerint. |
+| K04  | V1.0   | Foglalások megtekintése                          | Felhasználói foglalások listázása, beleértve a dátumot, időpontot, és a mosógép azonosítóját. |
+| K13  | V1.0   | Adminisztrátori statisztikák                    | Statisztikai adatok megtekintése a mosógépek használatáról és foglalásokról adminisztrátorok számára. |
+| K09  | V1.0   | Felhasználói foglalások kezelése                 | A bejelentkezett felhasználók számára biztosított, saját foglalásaik kezelésére alkalmas felület. |
+| K06  | V1.0   | Platformfüggetlen, robusztus működés             | Szabványos, operációs rendszertől független technológiák használata: PHP, Apache HTTP szerver, MySQL. |
