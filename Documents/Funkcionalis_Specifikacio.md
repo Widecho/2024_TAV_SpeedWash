@@ -15,3 +15,7 @@ A rendszer legfőbb céljai:
 - Valós idejű információk megjelenítése a szabad mosógépekről.
 - Felhasználói jogosultságok kezelése (felhasználó és adminisztrátor).
 - Költséghatékony és platformfüggetlen üzemeltetés.
+
+## 2. Jelenlegi helyzet
+
+SpeedWash mosoda jelenleg 5 db kombinált mosó- és szárítógéppel funkcionál. Egy tisztítási szolgáltatást nyújtó vállalkozás önkiszolgálói formában. Jelenleg 1 helyszínen üzemel. Alapvetően jól menő vállalkozásról van szó. A foglalásokat egy kockás füzetben vezették eddig, ami valljuk be tarthatatlan korunkban. Problémaként merült fel, hogy kialakultak túltelített és pangó időszakok. A vendégek nem tudják otthonról elindulva, hogy találnak e szabad mosógépet, hacsak nem érdeklődnek telefonon, ami kényelmetlen a mai világban és pénzbe kerül nem utolsó sorban. A vállalkozás így vevőktől és pénztől esik el, ha egy ügyfél potyára érkezik a helyszínre. Ráadásul a vezetőség az online foglalás bevezetése után készül még két új mosodát nyitni, ezeknek az adminisztrációja egy megfelelő szoftver nélkül eléggé kaotikus állapotoknak terítene meg. 
