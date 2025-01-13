@@ -286,3 +286,9 @@ Az adminisztrátor automatikusan generált statisztikai adatokat tekinthet meg, 
 - **K13:** A bejelentkezett felhasználók saját foglalásaik kezelését intuitív és egyszerű felületen keresztül végezhetik el.
 
 - **K14:** A platformfüggetlen működés biztosítja, hogy a rendszer minden környezetben megbízhatóan üzemeljen, és könnyen bővíthető legyen a jövőbeni igényekhez.
+
+## 10. Prototípusok
+
+![title](Images/1.png)
+![title](Images/2.png)
+![title](Images/3.png)
