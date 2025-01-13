@@ -289,6 +289,70 @@ Az adminisztrátor automatikusan generált statisztikai adatokat tekinthet meg, 
 
 ## 10. Prototípusok
 
+### Bejelentkezés
 ![title](Images/1.png)
+### Használt gépeim
 ![title](Images/2.png)
+### Főoldal
 ![title](Images/3.png)
+
+# Folyamatleírások, működési szcenáriók
+
+## 11.1 Felhasználó
+
+### 11.1.1 Regisztráció
+1. A felhasználó megadja a regisztrációhoz szükséges adatokat (felhasználónév, email cím, jelszó) a frontend felületen egy űrlap kitöltésével.
+2. **Post Request**-el elküldi a megadott adatokat a backendnek.
+3. A backend fogadja az adatokat, majd megkezdi a feldolgozást:
+   - **Validálás:** Ellenőrzi, hogy az inputok megfelelnek-e a formai követelményeknek (pl. email formátum, jelszó erőssége). Hibás adatok esetén tájékoztatja a felhasználót.
+   - **Tárolás:** A validált adatokat eltárolja az adatbázisban. A jelszó biztonságosan, kódolt formában kerül tárolásra a PHP `password_hash()` függvényével.
+4. **Visszajelzés:** Sikeres regisztráció esetén visszajelzést küld, és átirányítja a felhasználót a bejelentkező felületre.
+
+### 11.1.2 Bejelentkezés
+1. A felhasználó megadja az e-mail címét és jelszavát egy űrlapon.
+2. **Post Request**-el elküldi az adatokat a backend részére.
+3. A backend az email cím alapján SQL lekérdezést hajt végre.
+4. A lekérdezés eredménye:
+   - **Sikeres:** Ellenőrzi a jelszó helyességét a `password_verify()` függvénnyel. Ha egyezik, a rendszer létrehoz egy egyedi tokent, és azt elmenti a PHP session-be.
+   - **Sikertelen:** Tájékoztatja a felhasználót, hogy az email cím vagy jelszó hibás.
+5. A sikeres bejelentkezést követően a felhasználót átirányítja a kezelőfelületre.
+
+### 11.1.3 Foglalás hozzáadása
+1. A felhasználó a kezelőfelületen kiválasztja a mosógépet, a dátumot, és az időpontot.
+2. **Post Request**-el elküldi az adatokat a backend részére.
+3. A backend:
+   - **Validálás:** Ellenőrzi, hogy a választott időpont elérhető-e. Ha nem, tájékoztatja a felhasználót.
+   - **Tárolás:** Az adatokat menti az adatbázisba.
+4. **Visszajelzés:** Sikeres mentés esetén értesíti a felhasználót.
+
+### 11.1.4 Foglalás törlése
+1. A felhasználó a kezelőfelületen kijelöli a törölni kívánt foglalást.
+2. **Delete Request**-el elküldi a foglalás azonosítóját a backendnek.
+3. A backend SQL törlési utasítást küld az adatbázisnak.
+4. **Visszajelzés:** Értesíti a felhasználót a sikeres törlésről.
+
+### 11.1.5 Saját foglalások megtekintése
+1. A felhasználó a kezelőfelületen a saját foglalásait listázza.
+2. **Get Request**-el kérdezi le az adatokat.
+3. A backend SQL lekérdezést végez a felhasználó azonosítója alapján, és visszaadja az adatokat a frontendnek.
+
+## 11.2 Adminisztrátor
+
+### 11.2.1 Bejelentkezés
+1. Az adminisztrátor bejelentkezési folyamata megegyezik a felhasználó bejelentkezési folyamatával, de külön jogosultsági szintet kap a session-ben.
+
+### 11.2.2 Adminisztrátor hozzáadása
+1. Csak egy meglévő adminisztrátor képes új adminisztrátort hozzáadni.
+2. Az admin megadja az új admin email címét és jelszavát.
+3. **Post Request**-el továbbítja az adatokat a backend felé.
+4. A backend validálja az adatokat, majd menti azokat az adminisztrátorok adatbázisába.
+
+### 11.2.3 Adminisztrátor és felhasználó törlése
+1. Az admin kijelöli a törlendő felhasználót vagy adminisztrátort.
+2. **Delete Request**-el küldi el az azonosítót.
+3. A backend törli az összes hozzá kapcsolódó adatot az adatbázisból.
+
+### 11.2.4 Felhasználók listája
+1. Az adminisztrátor a kezelőfelületen kéri le az összes regisztrált felhasználót.
+2. **Get Request**-el kérdezi le az adatokat.
+3. A backend SQL lekérdezést hajt végre, és az eredményt visszaküldi a frontendnek.
