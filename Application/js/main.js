@@ -107,5 +107,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mosógépek lista
+    if (document.getElementById('machines-container')) {
+        async function loadMachines() {
+            const response = await fetch('../api/get_machines.php');
+            const machines = await response.json();
+            const container = document.getElementById('machines-container');
+            container.innerHTML = '';
+            machines.forEach(machine => {
+                const machineDiv = document.createElement('div');
+                machineDiv.className = 'machine';
+                machineDiv.innerHTML = `
+                    <h2>${machine.name}</h2>
+                    <div class="reservations">
+                        <h3>Foglalások:</h3>
+                        ${machine.reservations.length > 0
+                            ? machine.reservations.map(res => `
+                                <p>${new Date(res.start_time).toLocaleString()} - 
+                                   ${new Date(res.end_time).toLocaleString()}</p>
+                            `).join('')
+                            : '<p>Nincsenek foglalások.</p>'}
+                    </div>
+                `;
+                container.appendChild(machineDiv);
+            });
+        }
+
+        loadMachines();
+    }
+
 
 });
