@@ -1,5 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Foglalás - loadMachines, loadAvailableTimes, és form submission
+    // Foglalás - loadMachines, loadAvailableTimes, and form submission
     if (document.getElementById('reservation-form')) {
         async function loadMachines() {
             const response = await fetch('../api/get_machines.php');
@@ -73,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMachines();
     }
 
-       // Bejelentkezés
-       if (document.getElementById('login-form')) {
+    // Bejelentkezés
+    if (document.getElementById('login-form')) {
         document.getElementById('login-form').addEventListener('submit', async function (e) {
             e.preventDefault();
             const formData = new FormData(e.target);
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // Regisztráció
     if (document.getElementById('register-form')) {
         document.getElementById('register-form').addEventListener('submit', async function (e) {
@@ -136,5 +137,57 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMachines();
     }
 
+    // Saját foglalások
+    if (document.getElementById('reservations-container')) {
+        async function loadReservations() {
+            const response = await fetch('../api/get_user_reservations.php');
+            const result = await response.json();
+            const container = document.getElementById('reservations-container');
+            container.innerHTML = '';
+            if (result.success && result.reservations.length > 0) {
+                const table = document.createElement('table');
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>Gép</th>
+                            <th>Kezdés</th>
+                            <th>Befejezés</th>
+                            <th>Művelet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${result.reservations.map(reservation => `
+                            <tr>
+                                <td>${reservation.machine_name}</td>
+                                <td>${new Date(reservation.start_time).toLocaleString()}</td>
+                                <td>${new Date(reservation.end_time).toLocaleString()}</td>
+                                <td><button class="delete-button" data-id="${reservation.reservation_id}">Törlés</button></td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                `;
+                container.appendChild(table);
 
+                document.querySelectorAll('.delete-button').forEach(button => {
+                    button.addEventListener('click', async (e) => {
+                        const reservationId = e.target.getAttribute('data-id');
+                        const deleteResponse = await fetch('../api/delete_reservation.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                            body: `reservation_id=${reservationId}`
+                        });
+                        const deleteResult = await deleteResponse.json();
+                        document.getElementById('response-message').textContent = deleteResult.message;
+                        if (deleteResult.success) {
+                            loadReservations();
+                        }
+                    });
+                });
+            } else {
+                container.innerHTML = '<p>Nincsenek foglalásaid.</p>';
+            }
+        }
+
+        loadReservations();
+    }
 });
