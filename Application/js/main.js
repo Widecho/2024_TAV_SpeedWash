@@ -73,4 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMachines();
     }
 
+       // Bejelentkezés
+       if (document.getElementById('login-form')) {
+        document.getElementById('login-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const response = await fetch('../api/authenticate.php', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            document.getElementById('response-message').textContent = result.message;
+            if (result.success) {
+                window.location.href = 'index.php';
+            }
+        });
+    }
+
 });
