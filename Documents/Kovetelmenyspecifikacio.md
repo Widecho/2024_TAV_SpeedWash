@@ -8,7 +8,6 @@
 ## Jelenlegi helyzet
     Vállalkozás: SpeedWash mosoda
     Gépek: 5 db kombinált mosó- és szárítógép
-    Egy tisztítási szolgáltatást nyújtó vállalkozás önkiszolgálói formában. Jelenleg 1 helyszínen üzemel. Alapvetően jól menő vállalkozásról van szó. A vállalkozás teljesítménye több, mint kielégítő. A reklámra még nem áldoztak komolyabban, szórólapos hírdetést alkalmaztak. A mosoda jó híre szájról szájra terjed. A tulajdonos már gondolkodik a terjeszkedésben, de előbb még néhány dolgot meg akar alapozni. A biztos működés támogatja a korszerű és rendszeresen karbantartott gépek kínálata. Mindazonáltal problémaként merült fel, hogy kialakultak túltelített és pangó időszakok. Felmerült az igény, hogy a szolgáltatás igénybevételét valamilyen szinten irányítani lehessen. A telefonok és emailek kezelése már megterhelő és nem is hatékony.
 
 ## „Vágyálom rendszer”
      A következő szint meglépése a vállalkozás internetes felületen történő megjelenítése. A webes felület egyrészt reklámként szolgálna, valamint a továbbiakban reklámfelületként is más szolgáltatások és termékek számára. Ennek az oldalnak a SpeedWash alapfunkcióját kell támogatni, azaz a felhasználók számára úgy kell megjelennie, amely nyilvánvalóan a mindennapi feladatok megkönnyítésére szolgál.
@@ -57,23 +56,4 @@
     5. Egyértelműség - egyszerű, érthető lépések biztosítása mind a regisztrációnál, mind az időpontfoglalásnál
     6. Platformfüggetlenség - bármilyen eszközön használható, amely rendelkezik webböngészővel
     7. Bővíthetőség, egyszerű karbantartás - a szabványos eszközök használata által biztosított
-    
-## Riportok
-    - Szabad riport
 
-        A cég stratégiája alapján mindig kicsiről indulnak, de annak jól működőnek és kompaktnak kell lennie. Ezért fontos, hogy a program biztosan működjön, átlátható legyen, könnyen fejleszthető, mert a jövőben mindenképpen bővíteni kellesz.
-        Szükséges, hogy a felhasználók email címe elérhetővé váljon. Az időpontfoglalás is nagyon fontos, hogy levegye a terhet az ügyfélszolgálatosról.
-    
-    - Irányított riport
-
-        Mi az elsődleges célja a weboldalnak?
-            - Az online időpontfoglalás megoldása.
-        Milyen reklámcélú tartalommal bírjon?
-            - Kiemelni a vállalkozás megbízhatóságát és ügyfélközpontúságát.
-        Milyen funkciókat tartalmazzon a regisztrált felhasználók számára?
-            - Adjon lehetőséget a szolgáltatás igénybevételének követésére, pl. mikor melyik gépet haználta.
-        Milyen egyéb funkciók legyenek az oldalon?
-            - Csak az alapvetőek. Információ a vállalkozásról, regisztráció, bejelentkezés, időpontfoglalás.
-        
-
-    
