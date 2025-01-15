@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kezdőlap</title>
-    <link rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
         <h1>Üdvözlünk a SpeedWash rendszerben!</h1>
-        <?php ?>
+        <?php include '../api/nav.php'; ?>
     </header>
     <main>
         <section> 
