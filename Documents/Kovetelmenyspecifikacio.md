@@ -8,7 +8,6 @@
 ## Jelenlegi helyzet
     Vállalkozás: SpeedWash mosoda
     Gépek: 5 db kombinált mosó- és szárítógép
-    Egy tisztítási szolgáltatást nyújtó vállalkozás önkiszolgálói formában. Jelenleg 1 helyszínen üzemel. Alapvetően jól menő vállalkozásról van szó. A vállalkozás teljesítménye több, mint kielégítő. A reklámra még nem áldoztak komolyabban, szórólapos hírdetést alkalmaztak. A mosoda jó híre szájról szájra terjed. A tulajdonos már gondolkodik a terjeszkedésben, de előbb még néhány dolgot meg akar alapozni. A biztos működés támogatja a korszerű és rendszeresen karbantartott gépek biztosításávalkínálata. mindazonáltal problémaként merült fel, hogy kialakultak túltelített és pangó időszakok. Felmerült az igény, hogy a szolgáltatás igénybevételét valamilyen szinten irányítani lehessen. A telefonok és emailek kezelése már megterhelő és nem is hatékony.
 
 ## „Vágyálom rendszer”
      A következő szint meglépése a vállalkozás internetes felületen történő megjelenítése. A webes felület egyrészt reklámként szolgálna, valamint a továbbiakban reklámfelületként is más szolgáltatások és termékek számára. Ennek az oldalnak a SpeedWash alapfunkcióját kell támogatni, azaz a felhasználók számára úgy kell megjelennie, amely nyilvánvalóan a mindennapi feladatok megkönnyítésére szolgál.
@@ -41,6 +40,14 @@
 ## A rendszerre vonatkozó szabályok
     A web felület szabványos eszközökkel készüljön: html/css/javascript. Az azonosítás folyamán a jogszabályok betartása kötelező.
 
+    AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2016/679 RENDELETE (2016. április 27.)* a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról,
+
+    A Bizottság 2011/711/EU ajánlása (2011. október 27.)* a kulturális anyagok digitalizálásáról és online hozzáférhetőségéről, valamint a digitális megőrzésről
+
+    98/34/EK európai parlamenti és tanácsi irányelv* a műszaki szabványok és szabályok, valamint az információs társadalom szolgáltatásaira vonatkozó szabályok terén információszolgáltatási eljárás megállapításáról (a 98/48//EK európai parlamenti és tanácsi irányelvvel módosította)
+
+    96/9/EK irányelv* (1996. március 11.) az adatbázisok jogi védelméről
+
 ## Követelmény lista
     1. Kezdőoldal - a vállalkozás rövid bemutatása
     2. Regisztráció - a felhasználók regisztrálhassanak felhasználónév, email és jelszó megadásával
@@ -49,4 +56,4 @@
     5. Egyértelműség - egyszerű, érthető lépések biztosítása mind a regisztrációnál, mind az időpontfoglalásnál
     6. Platformfüggetlenség - bármilyen eszközön használható, amely rendelkezik webböngészővel
     7. Bővíthetőség, egyszerű karbantartás - a szabványos eszközök használata által biztosított
-    
+
