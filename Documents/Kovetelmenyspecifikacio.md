@@ -41,6 +41,14 @@
 ## A rendszerre vonatkozó szabályok
     A web felület szabványos eszközökkel készüljön: html/css/javascript. Az azonosítás folyamán a jogszabályok betartása kötelező.
 
+    AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2016/679 RENDELETE (2016. április 27.)* a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról,
+
+    A Bizottság 2011/711/EU ajánlása (2011. október 27.)* a kulturális anyagok digitalizálásáról és online hozzáférhetőségéről, valamint a digitális megőrzésről
+
+    98/34/EK európai parlamenti és tanácsi irányelv* a műszaki szabványok és szabályok, valamint az információs társadalom szolgáltatásaira vonatkozó szabályok terén információszolgáltatási eljárás megállapításáról (a 98/48//EK európai parlamenti és tanácsi irányelvvel módosította)
+
+    96/9/EK irányelv* (1996. március 11.) az adatbázisok jogi védelméről
+
 ## Követelmény lista
     1. Kezdőoldal - a vállalkozás rövid bemutatása
     2. Regisztráció - a felhasználók regisztrálhassanak felhasználónév, email és jelszó megadásával
@@ -49,4 +57,23 @@
     5. Egyértelműség - egyszerű, érthető lépések biztosítása mind a regisztrációnál, mind az időpontfoglalásnál
     6. Platformfüggetlenség - bármilyen eszközön használható, amely rendelkezik webböngészővel
     7. Bővíthetőség, egyszerű karbantartás - a szabványos eszközök használata által biztosított
+    
+## Riportok
+    - Szabad riport
+
+        A cég stratégiája alapján mindig kicsiről indulnak, de annak jól működőnek és kompaktnak kell lennie. Ezért fontos, hogy a program biztosan működjön, átlátható legyen, könnyen fejleszthető, mert a jövőben mindenképpen bővíteni kellesz.
+        Szükséges, hogy a felhasználók email címe elérhetővé váljon. Az időpontfoglalás is nagyon fontos, hogy levegye a terhet az ügyfélszolgálatosról.
+    
+    - Irányított riport
+
+        Mi az elsődleges célja a weboldalnak?
+            - Az online időpontfoglalás megoldása.
+        Milyen reklámcélú tartalommal bírjon?
+            - Kiemelni a vállalkozás megbízhatóságát és ügyfélközpontúságát.
+        Milyen funkciókat tartalmazzon a regisztrált felhasználók számára?
+            - Adjon lehetőséget a szolgáltatás igénybevételének követésére, pl. mikor melyik gépet haználta.
+        Milyen egyéb funkciók legyenek az oldalon?
+            - Csak az alapvetőek. Információ a vállalkozásról, regisztráció, bejelentkezés, időpontfoglalás.
+        
+
     
