@@ -72,32 +72,69 @@ A **SpeedWash** rendszer célja, hogy a felhasználók gyorsan és egyszerűen f
 
 ## 3. Üzleti folyamatok modellje
 
-### 3.1 Üzleti szereplők
+A rendszert nem lehet regisztrálás nélkül használni. A látogató a kezdőoldalt képes elérni és azon keresztül bejelentkezni, vagy regisztrálni a rendszerbe. A bejelentkezett felhasználó képes mosó- és szárítógépeket foglalni, listázni, hogy ezek mikor elérhetőek és a saját foglalásait áttekinteni és törölni.
 
-- **Regisztrált felhasználók**:
-  - Foglalások kezelése (új foglalás, foglalások törlése).
-  - Saját foglalások megtekintése.
-- **Adminisztrátor**:
-  - Mosógépek adatainak kezelése.
-  - Foglalások törlése.
-  
-### 3.2 Üzleti folyamatok
+### **3.1 Üzleti szereplők**
 
-#### Foglalás kezelése
+A bejelentkezés minden felhasználó számára egységesen az alábbiak szerint történik:  
+A kezdőoldalra lépve megjelenik egy beviteli űrlap, amely tartalmazza az „Email” és a „Jelszó” mezőket. A felhasználónak ki kell töltenie ezeket a mezőket, majd a **„Belépés”** gombra kattintva tud bejelentkezni.  
+- **Sikeres azonosítás** esetén a felhasználó belép a rendszerbe, ahol a jogosultsági szintjének megfelelő felület jelenik meg.  
+- **Sikertelen azonosítás** esetén hibaüzenet figyelmezteti a felhasználót a probléma pontos okára, például hibás email cím vagy jelszó esetén.
 
-| Lépcsők                  | Leírás                                       |
-| ------------------------ | -------------------------------------------- |
-| Mosógép kiválasztása     | A felhasználó kiválasztja a kívánt mosógépet.|
-| Időpont foglalása         | Csak szabad időpontok ajánlottak fel.       |
-| Foglalás rögzítése        | Az adatbázisban tárolódik a foglalás.       |
+A rendszer két fő szereplőt különböztet meg:  
 
-#### Felhasználói jogosultságok
+- **Felhasználók**:  
+  Ők regisztrálnak a rendszerbe, foglalásokat hoznak létre, illetve megtekintik és kezelik azokat.  
 
-| Funkció                   | Leírás                                      |
-| ------------------------- | ------------------------------------------ |
-| Bejelentkezés             | Email és jelszó hitelesítésével.            |
-| Foglalások lekérdezése    | A felhasználó megtekintheti saját foglalásait.|
-| Foglalások törlése        | A felhasználó törölheti saját foglalását.   |
+- **Adminisztrátorok**:  
+  Ők felelnek a rendszer zavartalan működéséért, például:  
+  - Mosógépek adatainak karbantartása,  
+  - Statisztikák megtekintése,  
+  - Felhasználók és foglalások kezeléséhez kapcsolódó műveletek elvégzése.
+
+---
+
+### **3.2 Üzleti folyamatok**
+
+#### **Felhasználói adatok megjelenítése**
+| **Megnevezés**           |
+|--------------------------|
+| A felhasználó neve       |
+| A felhasználó jelszava   |
+| A felhasználó email címe |
+| A felhasználó telefonszáma |
+
+#### **Foglalások megtekintése és szűrése**
+| **Megnevezés**                        |
+|---------------------------------------|
+| Foglalás szűrése ettől a dátumtól     |
+| Foglalás szűrése eddig a dátumig      |
+| Foglalt mosógép azonosítója           |
+| Foglalás kezdete                      |
+| Foglalás vége                         |
+
+#### **Új foglalás rögzítése**
+| **Megnevezés**           |
+|--------------------------|
+| Mosógép azonosítója      |
+| Foglalás kezdő időpontja |
+
+#### **Meglévő foglalások módosítása vagy törlése**
+| **Megnevezés**           |
+|--------------------------|
+| Mosógép azonosítója      |
+| Foglalás kezdő időpontja |
+| Foglalás befejező időpontja |
+
+---
+
+### **3.3 Üzleti entitások**
+
+| **Entitások**     |
+|-------------------|
+| Foglalás          |
+| Mosógép           |
+| Felhasználó       |
 
 ---
 
