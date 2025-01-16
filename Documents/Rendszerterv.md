@@ -285,6 +285,14 @@ A felhasználók törölhetik a meglévő foglalásaikat. A törlési kérelmet 
 
 ---
 
+## **5.3 Határ osztályok**
+A határosztályok felelősek a felhasználói interakciók kezeléséért, beleértve az adatok bevitelét, ellenőrzését és továbbítását az üzleti logikához.  
+
+**UML diagram: Határosztályok**  
+![Határosztályok](Images/7.png)
+
+---
+
 ## **5.3 Menühierarchiák**
 
 ### **Elérhető funkciók regisztráció nélkül:**
