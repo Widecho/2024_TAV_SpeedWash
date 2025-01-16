@@ -16,7 +16,7 @@
             <h2>Üdvözlünk a SpeedWash mosodánál!</h2> 
             <p>Kényelmesen kezelheted mosási folyamataidat online. Foglalj mosógépet, nézd meg a gépek állapotát!</p> 
         </section>
-        <img src="images/logo.png" alt="logo" height="150">
+        <img src="../images/logo.png" alt="logo" height="150">
            
             <h3>"SpeedWash ahol a tisztaság minőséggel és megbízhatósággal párosul!"</h3>
     </main>
@@ -33,7 +33,7 @@
        
        <table>
         <tr>
-            <td rowspan="9"><img src="images/gep.png" alt="gép" height="150"></td>
+            <td rowspan="9"><img src="../images/gep.png" alt="gép" height="150"></td>
             <td>Centrifuga zajszint</td>
             <td>68 dB(A)</td>
         </tr>       
