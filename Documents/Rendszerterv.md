@@ -242,62 +242,56 @@ A fent említett rendeletek és irányelvek biztosítják, hogy a rendszer megfe
 
 ---
 
-## 5. Adatbázisterv
+# **5. Funkcionális terv**
 
-### Adattáblák
+## **5.1 Rendszerszereplők**
+A rendszer használatához szükséges az előzetes regisztráció az oldalon keresztül. A rendszerbe regisztrált felhasználók képesek:  
+- Új mosógép-foglalásokat rögzíteni.  
+- Meglévő foglalásaikat megtekinteni, módosítani vagy törölni.  
+- A foglalásokat dátum és idő szerint szűrni.  
 
-#### Felhasználók tábla
-
-| Mezőnév    | Típus        | Megjegyzés             |
-| ---------- | ------------ | ---------------------- |
-| id         | INT          | Elsődleges kulcs       |
-| username   | VARCHAR(50)  | Felhasználónév         |
-| email      | VARCHAR(100) | Email cím              |
-| password   | VARCHAR(255) | Jelszó (titkosítva)    |
-
-#### Mosógépek tábla
-
-| Mezőnév    | Típus        | Megjegyzés             |
-| ---------- | ------------ | ---------------------- |
-| id         | INT          | Elsődleges kulcs       |
-| name       | VARCHAR(50)  | Mosógép neve           |
-| status     | VARCHAR(20)  | Szabad vagy foglalt    |
-
-#### Foglalások tábla
-
-| Mezőnév    | Típus        | Megjegyzés             |
-| ---------- | ------------ | ---------------------- |
-| id         | INT          | Elsődleges kulcs       |
-| machine_id | INT          | Hivatkozás a mosógépre |
-| user_id    | INT          | Hivatkozás a felhasználóra |
-| start_time | DATETIME     | Foglalás kezdete       |
-| end_time   | DATETIME     | Foglalás vége          |
+Az adminisztrátorok ezen túlmenően jogosultak:  
+- Mosógépek állapotának kezelésére.  
+- Felhasználói fiókok adminisztrációjára.  
+- Statisztikai adatok megtekintésére.  
 
 ---
 
-## 6. Fizikai környezet
+## **5.2 Rendszerhasználati esetek és lefutásaik**
 
-### 6.1 Szoftverek
+### **Regisztráció**
+A regisztrációs folyamat során a felhasználó megadja az e-mail címét, nevét, és jelszavát. A rendszer ellenőrzi a megadott adatok formátumát, majd a validált adatokat elmenti az adatbázisba.
 
-- **Webszerver**: Apache
-- **Adatbázis-kezelő**: MySQL
-- **Kliensoldali technológiák**: HTML, CSS, JavaScript
+**UML diagram: Regisztráció**  
+_Elkészítve a rendszer szereplőivel és a folyamatlépésekkel._  
 
-### 6.2 Hardver követelmények
-
-- Szerver: 4 GB RAM, 2 CPU mag
-- Kliens: Bármely modern böngészővel kompatibilis eszköz
+![Regisztráció](Images/4.png)
 
 ---
 
-## 7. Tesztterv
+### **Új foglalás hozzáadása**
+A felhasználók új foglalásokat rögzítenek a mosógépekhez. A rendszer ellenőrzi a foglalás időpontját és a mosógép állapotát, hogy elkerülje az ütközéseket.
 
-### Tesztelési lépések
+**UML diagram: Új foglalás hozzáadása**  
+![Új foglalás](Images/5.png)
 
-1. **Bejelentkezés tesztelése**:
-   - Helyes és helytelen adatokkal.
-2. **Foglalás létrehozásának tesztelése**:
-   - Szabad időpont kiválasztása.
-   - Időpontütközések kezelése.
-3. **Foglalások törlésének tesztelése**:
-   - Csak a saját foglalások törölhetők.
+---
+
+### **Foglalás törlése**
+A felhasználók törölhetik a meglévő foglalásaikat. A törlési kérelmet a rendszer az adatbázisban hajtja végre, és eltávolítja a foglalást.
+
+**UML diagram: Foglalás törlése**  
+![Foglalás törlése](Images/6.png)
+
+---
+
+## **5.3 Menühierarchiák**
+
+### **Elérhető funkciók regisztráció nélkül:**
+- Bejelentkezés  
+- Regisztráció  
+
+### **Elérhető funkciók regisztrációval:**
+- Új foglalás rögzítése  
+- Foglalások megtekintése  
+- Foglalások törlése  
