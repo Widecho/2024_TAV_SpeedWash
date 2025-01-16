@@ -37,3 +37,52 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #2ecc71;
 }
+
+.machines-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.machine {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #e0f7fa;
+    text-align: center;
+}
+
+.machine.in-use {
+    background-color: #ffccbc;
+}
+
+form {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
