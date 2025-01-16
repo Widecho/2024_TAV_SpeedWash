@@ -188,6 +188,57 @@ A rendszer két fő szereplőt különböztet meg:
     - A rendszer működésének ellenőrzéséhez a böngészőben a `http://localhost/<projekt_mappa>` URL használható.  
     - A `config.inc.php` fájlban szükség szerint megadható az adatbázis jelszava és egyéb paraméterei.  
 
+### Európai uniós rendeletek, irányelvek, ajánlások
+
+1. **AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2016/679 RENDELETE (2016. április 27.)**
+   - Más néven: Általános Adatvédelmi Rendelet (GDPR).
+   - A természetes személyek személyes adatainak védelme, valamint az ilyen adatok szabad áramlásának biztosítása.
+   - Az adatkezelés során biztosítani kell az adatkezelés jogalapját, az adatok célhoz kötöttségét, valamint az érintettek jogainak érvényesülését (hozzáférés, helyesbítés, törlés, adathordozhatóság).
+
+2. **A Bizottság 2011/711/EU ajánlása (2011. október 27.)**
+   - Kulturális anyagok digitalizálásáról és online hozzáférhetőségéről, valamint a digitális megőrzésről szóló irányelv.
+   - Az elektronikus dokumentumok és adatok megőrzésére, valamint a digitális platformokon való elérhetőségük biztosítására vonatkozó ajánlások.
+
+3. **98/34/EK európai parlamenti és tanácsi irányelv**
+   - A műszaki szabványok és szabályok, valamint az információs társadalom szolgáltatásaira vonatkozó szabályok egységesítése érdekében létrehozott információszolgáltatási eljárásokról.
+
+4. **96/9/EK irányelv (1996. március 11.)**
+   - Az adatbázisok jogi védelméről.
+   - Az adatbázisokat készítők szellemi tulajdonának védelme érdekében kialakított jogi keretrendszer.
+
+### Magyarországi jogszabályok
+
+1. **2011. évi CXII. törvény - Az információs önrendelkezési jogról és az információszabadságról (Infotv.)**
+   - Az érintettek adatainak védelmét szabályozza Magyarországon.
+   - Az adatkezelők számára előírja az adatkezelési tevékenységek átláthatóságát, valamint az érintettek jogainak biztosítását.
+
+2. **2018. évi LIII. törvény az adózás rendjéről**
+   - Előírja az elektronikus nyilvántartások és adatszolgáltatások szabályozását az adóhatóság irányába.
+   - Az adatbiztonság és a naplózás kötelező előírásait fogalmazza meg.
+
+3. **2013. évi V. törvény - A Polgári Törvénykönyv**
+   - Tartalmazza a szerzői jogok és a szellemi tulajdon védelmére vonatkozó szabályokat.
+
+4. **2001. évi CVIII. törvény - Az elektronikus kereskedelmi szolgáltatások, valamint az információs társadalommal összefüggő szolgáltatások egyes kérdéseiről**
+   - Meghatározza az elektronikus kereskedelmi tevékenységekre vonatkozó szabályokat.
+   - Tartalmazza a szolgáltatók adatkezelési és információszolgáltatási kötelezettségeit.
+
+5. **2018. évi LIV. törvény az üzleti titok védelméről**
+   - Biztosítja a gazdasági tevékenység során keletkező üzleti titkok védelmét.
+
+### További előírások
+
+1. **ISO/IEC 27001 szabvány**
+   - Az információbiztonsági irányítási rendszerek követelményeit meghatározó nemzetközi szabvány.
+   - Az adatvédelem és biztonság érdekében javasolt alkalmazni.
+
+2. **ISO/IEC 12207 szabvány**
+   - A szoftver életciklusára vonatkozó szabvány, amely az alkalmazás fejlesztési és üzemeltetési szakaszaira vonatkozik.
+
+3. **NIS irányelv**
+   - Az Európai Unió kiberbiztonsági irányelve, amely a hálózati és információs rendszerek biztonságának fokozását célozza.
+
+A fent említett rendeletek és irányelvek biztosítják, hogy a rendszer megfeleljen a jogszabályi követelményeknek és szabványoknak, miközben garantálja a felhasználók adatainak biztonságát és a szolgáltatások megbízhatóságát.
 
 ---
 
