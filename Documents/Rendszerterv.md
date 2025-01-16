@@ -341,3 +341,109 @@ Az alkalmazás egy webplatformra készül, amely bármilyen operációs rendszer
 - GitHub: Verziókövetés és csapatmunka támogatása.
 - Postman: API teszteléshez.
 - XAMPP: Lokális szerverkörnyezet biztosításához (Apache, MySQL, PHP).
+
+
+# 7. Architekturális terv
+
+A **Backend** PHP programozási nyelven készül objektumorientált programozás (OOP) alapokon. Az alkalmazás megvalósítása az MVC (model-view-controller) tervezési minta szerint történik, amely elválasztja az üzleti logikát, az adatokat, és a megjelenítést.
+
+A **Frontend** HTML, CSS, JavaScript és PHP technológiákat használ. Az alkalmazás felépítése elkülönülő modulokból áll, amelyek:
+- **Header (fejléc)**: A navigációs menük és az oldal azonosító elemei találhatók itt.
+- **Navigation (navigáció)**: Az alkalmazás nézeteinek közötti navigáció biztosítása.
+- **Content (tartalom)**: A nézetek tartalmi része (pl. mosógépek listázása, foglalások kezelése).
+- **Footer (lábléc)**: Információs elemek (pl. szerzői jog, kapcsolat).
+
+Az alkalmazás könnyen karbantartható és bővíthető, az egyes komponensek elkülönítése révén.
+
+## 7.1 Az alkalmazás rétegei, fő komponensei, ezek kapcsolatai
+
+Az alkalmazás több rétegre épül, amelyek egymással kapcsolatban állnak:
+
+- **Kliensoldal**: A felhasználók webböngésző segítségével érik el az alkalmazást. A felületet HTML, CSS, és JavaScript biztosítja.
+- **Szerveroldal**: A PHP alapú backend kezeli az üzleti logikát, a felhasználói kérések validálását és feldolgozását.
+- **Adatbázis**: A MySQL adatbázis tárolja a felhasználói adatokat, foglalásokat, és a mosógépek információit.
+
+A CRUD (Create, Read, Update, Delete) műveletek HTTP POST, GET és DELETE metódusokkal kerülnek átadásra szerver-kliens relációban. Az adatokat a MySQL adatbázisban tároljuk, az Apache webszerveren futtatva az alkalmazást.
+
+## 7.2 Változások kezelése
+
+Az alkalmazás változtatásait szerveroldalon végezzük. A módosítások a PHP backend és az adatbázis rétegben történnek, a felhasználónak nincs szüksége manuális beavatkozásra. A frontend automatikusan alkalmazza a szerveroldali frissítéseket a böngészőn keresztül.
+
+## 7.3 Rendszer bővíthetősége
+
+A rendszer könnyen bővíthető új funkciókkal vagy további felhasználói igények kielégítésére. A következő bővítési lehetőségeket biztosítja:
+- Új funkciók hozzáadása a backend és frontend moduláris felépítése miatt.
+- Nagyobb adatmennyiség kezelése az adatbázis optimalizálásával.
+- További szervergépek csatlakoztatása a terheléselosztás érdekében.
+
+A vékony kliensoldali megközelítés miatt nincs szükség külön beavatkozásra a felhasználói oldalon a rendszer bővítésekor.
+
+## 7.4 Biztonsági funkciók
+
+Az alkalmazás a következő biztonsági megoldásokat használja:
+- **CSRF védelem**: A rendszer CSRF-tokeneket használ az űrlapok és kérések hitelességének ellenőrzésére. Ez biztosítja, hogy minden kérés a weboldalon keresztül történjen.
+- **Jelszó titkosítás**: A felhasználói jelszavakat a PHP `password_hash()` függvényével kódoljuk, így azok biztonságosan kerülnek tárolásra.
+- **Session alapú hitelesítés**: Bejelentkezéskor egyedi token készül, amelyet a szerver PHP session-ben tárol. Ez garantálja, hogy a felhasználó hozzáférése védett legyen.
+- **Adatbázis lekérdezések biztonsága**: Az SQL Injection elleni védelem érdekében minden adatbázis lekérdezés paraméterezett SQL-t használ.
+
+Ezek a megoldások biztosítják a felhasználói adatok és a rendszer integritásának védelmét.
+
+
+# 8. Adatbázisterv
+
+## **Felhasználók tábla**
+
+| Mezőnév       | Megnevezés                                         | Jellemzi                     |
+|---------------|----------------------------------------------------|------------------------------|
+| ID            | Felhasználó azonosító                              | Elsődleges kulcs            |
+| Név           | A felhasználó neve                                 |                              |
+| Email cím     | A felhasználó email címe                           |                              |
+| Jelszó        | A felhasználó jelszava                             |                              |
+| Telefonszám   | A felhasználó telefonszáma                         |                              |
+| Admin         | A felhasználó normál vagy adminisztrátor jogkörrel |                              |
+| Valid         | A felhasználó érvényessége a rendszerben           |                              |
+
+---
+
+## **Mosógépek tábla**
+
+| Mezőnév       | Megnevezés                                  | Jellemzi                     |
+|---------------|---------------------------------------------|------------------------------|
+| ID            | Mosógép azonosító                          | Elsődleges kulcs            |
+| Név           | A mosógép neve                             |                              |
+| Típus         | A mosógép típusa                           |                              |
+| Állapot       | A mosógép aktuális állapota (pl. szabad/foglalt) |                              |
+| Karbantartás  | A mosógép karbantartási időszaka            |                              |
+
+---
+
+## **Foglalások tábla**
+
+| Mezőnév       | Megnevezés                                  | Jellemzi                     |
+|---------------|---------------------------------------------|------------------------------|
+| ID            | Foglalás azonosító                         | Elsődleges kulcs            |
+| Felhasználó ID| A foglalást létrehozó felhasználó azonosító | Külső kulcs                 |
+| Mosógép ID    | A foglalt mosógép azonosítója               | Külső kulcs                 |
+| Kezdési idő   | A foglalás kezdési időpontja                |                              |
+| Befejezési idő| A foglalás befejezési időpontja             |                              |
+| Valid         | A foglalás érvényessége                    |                              |
+
+---
+![Adatbázis tervezet](Images/8.png)
+---
+
+## **Adattárolási szabályok**
+1. A **Felhasználók tábla** tartalmazza a rendszer összes regisztrált felhasználójának adatait, beleértve az adminokat is.
+2. A **Mosógépek tábla** tárolja a rendszerben elérhető mosógépek adatait és azok állapotát.
+3. A **Foglalások tábla** a felhasználók által létrehozott foglalásokat tartalmazza, kapcsolatot teremtve a felhasználók és a mosógépek között.
+
+---
+
+## **Egyed-Kapcsolat diagram**
+Az adatbázis három fő entitása:
+- **Felhasználók**: kapcsolatban áll a foglalásokkal (1:N kapcsolat).
+- **Mosógépek**: kapcsolatban áll a foglalásokkal (1:N kapcsolat).
+- **Foglalások**: tartalmazza a felhasználó és a mosógép közötti kapcsolatot.
+
+**Kapcsolatok:**
+- A **Foglalások** tábla a **Felhasználók** és a **Mosógépek** táblával külső kulcsokon keresztül kapcsolódik.
