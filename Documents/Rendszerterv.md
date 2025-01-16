@@ -138,20 +138,56 @@ A rendszer két fő szereplőt különböztet meg:
 
 ---
 
-## 4. Követelmények
+### **4. Követelmények**
 
-### Funkcionális követelmények
+#### **Regisztrált felhasználók lehetőségei**
+- Regisztrációs adatok módosítása  
+- Regisztráció törlése  
+- Új foglalás rögzítése  
+- Korábban rögzített foglalás módosítása  
+- Korábban rögzített foglalás törlése  
+- Foglalások lekérdezése, szűrése (dátum, időpont, mosógép alapján)  
 
-- Felhasználók regisztrációja.
-- Felhasználók bejelentkezése.
-- Mosógépek állapotának valós idejű megtekintése.
-- Foglalások kezelése (létrehozás, törlés).
+#### **Adminisztrátorok lehetőségei**
+- Bejelentkezési adatok módosítása (e-mail és jelszó)  
+- Új mosógépek hozzáadása  
+- Mosógépek állapotának módosítása  
+- Adminisztrátor hozzáadása  
+- Adminisztrátorok és felhasználók törlése  
+- Felhasználók listájának megtekintése  
+- Statisztikai adatok megtekintése a mosógépek kihasználtságáról és a foglalások alakulásáról  
 
-### Nemfunkcionális követelmények
+---
 
-- Reszponzív felület mobil és asztali eszközökre.
-- Gyors adatfeldolgozás és megjelenítés.
-- HTTPS protokollon keresztüli biztonságos adatátvitel.
+### **Funkcionális követelmények**
+- A rendszer használatához kötelező az előzetes regisztráció.  
+- Regisztrált felhasználók számára elérhető a bejelentkezés után:  
+  - Foglalások kezelése (létrehozás, módosítás, törlés).  
+  - Saját foglalások megtekintése és szűrése.  
+- Adminisztrátor jogosultságokkal elérhető funkciók:  
+  - Mosógépek adminisztrációja (hozzáadás, állapotmódosítás).  
+  - Felhasználói adatkezelés (listázás, törlés).  
+  - Foglalási statisztikák és kihasználtsági adatok megtekintése.  
+
+---
+
+### **Nemfunkcionális követelmények**
+- **Egyszerű használat**: A rendszer felhasználóbarát kialakítású, gyorsan és könnyen elsajátítható.  
+- **Képzettség**: Felhasználói szintű informatikai ismeretek elegendőek a használathoz.  
+- **Oktatásmentes bevezetés**: A rendszer használata nem igényel előzetes oktatást.  
+- **Telepítési környezet**:  
+  - A rendszer egy szerver számítógépen kerül üzembe helyezésre.  
+  - A futtatáshoz az alábbiak szükségesek:  
+    - **XAMPP környezet**, amely tartalmazza az alábbiakat:  
+      - Apache webszerver  
+      - MySQL adatbázis szerver  
+      - PHP futtatókörnyezet  
+  - **Beállítások a XAMPP-ban**:  
+    - A projektfájlokat a `htdocs` mappában kell elhelyezni.  
+    - A MySQL adatbázis konfigurációja elérhető a `phpMyAdmin` felületen keresztül.  
+    - A rendszer működésének ellenőrzéséhez a böngészőben a `http://localhost/<projekt_mappa>` URL használható.  
+    - A `config.inc.php` fájlban szükség szerint megadható az adatbázis jelszava és egyéb paraméterei.  
+
 
 ---
 
