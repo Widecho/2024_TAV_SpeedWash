@@ -293,7 +293,7 @@ A határosztályok felelősek a felhasználói interakciók kezeléséért, bele
 
 ---
 
-## **5.3 Menühierarchiák**
+## **5.4 Menühierarchiák**
 
 ### **Elérhető funkciók regisztráció nélkül:**
 - Bejelentkezés  
@@ -303,3 +303,41 @@ A határosztályok felelősek a felhasználói interakciók kezeléséért, bele
 - Új foglalás rögzítése  
 - Foglalások megtekintése  
 - Foglalások törlése  
+
+# 6. Fizikai környezet
+
+## 6.1 Platformok
+- PHP 8.1
+- MySQL 8.0
+- JavaScript ES6
+- HTML5
+- CSS3
+
+## 6.2 Vásárolt szoftverkomponensek és külső rendszerek
+- **Vásárolt szoftverkomponensek**: Nincsenek.
+- **Ingyenes szoftverkomponensek**:
+  - Bootstrap CSS framework a reszponzív felhasználói felület kialakításához.
+  - FontAwesome ikonok felhasználása a vizuális elemek javítása érdekében.
+
+## 6.3 Hardver és hálózati topológia
+Az alkalmazás egy webplatformra készül, amely bármilyen operációs rendszerrel kompatibilis, amely támogatja a következő technológiákat:
+- Böngésző, amely támogatja a modern szabványokat (pl. Google Chrome, Mozilla Firefox, Microsoft Edge).
+- A webszerver XAMPP csomagban futtatott Apache HTTP szervert és MySQL adatbázist használ.
+- Hardverkövetelmények:
+  - Minimum 2 GHz processzor.
+  - 4 GB RAM a fejlesztési és tesztelési környezethez.
+  - 10 GB szabad tárhely a rendszer és az adatbázis tárolásához.
+
+## 6.4 Fizikai alrendszerek
+- **Webszerver**: 80-as porton futó Apache HTTP szerver a XAMPP környezetben.
+- **Adatbázisszerver**: MySQL adatbázis a felhasználói adatok, foglalások és mosógépek nyilvántartására.
+- **Kliensoldali követelmények**:
+  - Böngésző, amely támogatja a JavaScript-et, HTML5-öt és CSS3-at.
+  - Eszköz: asztali számítógép, laptop vagy okostelefon.
+
+## 6.5 Fejlesztő eszközök
+- Visual Studio Code: A kód fejlesztéséhez és szerkesztéséhez.
+- MySQL Workbench: Az adatbázis kezeléséhez és tervezéséhez.
+- GitHub: Verziókövetés és csapatmunka támogatása.
+- Postman: API teszteléshez.
+- XAMPP: Lokális szerverkörnyezet biztosításához (Apache, MySQL, PHP).
