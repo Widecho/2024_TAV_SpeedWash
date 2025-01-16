@@ -447,3 +447,164 @@ Az adatbázis három fő entitása:
 
 **Kapcsolatok:**
 - A **Foglalások** tábla a **Felhasználók** és a **Mosógépek** táblával külső kulcsokon keresztül kapcsolódik.
+
+# 9. Implementációs terv
+
+A felhasználó webböngészőn keresztül éri el a vékony klienst, azaz a weboldalakat. Ezek a weboldalak HTML, CSS, JavaScript programozási nyelvekben készülnek. Az adatokat MySQL adatbázis szerveren tároljuk, amelyet az üzleti logika rétegében futó PHP program kapcsol össze a felhasználói felülettel.
+
+## 9.1 Perzisztencia (adatbázis osztály)
+- **MySQL adatbázis szerver**: Az alkalmazás adatainak tárolására szolgáló rendszer, amely lehetővé teszi a felhasználók, foglalások és mosógépek adatainak hatékony kezelését.
+
+## 9.2 Üzleti logika osztályai
+- **PHP programok a webszerveren**: Az üzleti logika kezelése és az adatbázis műveletek végrehajtása a backend rétegben.
+
+## 9.3 Kliens oldal osztályai
+- **HTML, CSS, JavaScript**: A felhasználói felület kialakítására és interaktivitás biztosítására használt technológiák.
+
+---
+
+# 10. Tesztterv
+
+A tesztterv célja, hogy a fejlesztők számára iránymutatást adjon a szoftver komponenseinek teszteléséhez. A cél annak biztosítása, hogy a szoftver megfeleljen az üzleti folyamatoknak és a funkcionális követelményeknek.
+
+## 10.1 Unit-teszt
+A fejlesztési folyamat során teszteljük a metódusokat és funkciókat:
+- Validálás, például a regisztrációs űrlap mezőinek ellenőrzése.
+- Adatbázis műveletek, mint például foglalások hozzáadása vagy törlése.
+
+## 10.2 Rendszerintegrációs tesztelés
+Egy új komponens integrálásakor biztosítjuk, hogy az megfeleljen az igényeknek. Például ellenőrizzük az adatáramlást a frontend és a backend között.
+
+## 10.3 Biztonsági teszt
+- Az adatokhoz kizárólag a jogosult felhasználók férhetnek hozzá.
+- A rendszer védi az adatbázist a nem hitelesített műveletekkel szemben.
+
+## 10.4 GUI tesztelése
+- Ellenőrizzük, hogy a felhasználói felület megfelel-e a követelményeknek és a képernyőterveknek.
+- Igény szerint változtatjuk a felületet, majd újra teszteljük.
+
+## 10.5 Felhasználói szintű tesztelés
+Szimuláljuk egy általános felhasználó viselkedését:
+- Bejelentkezés működésének ellenőrzése.
+- Foglalások létrehozása, módosítása és törlése.
+- Foglalások megjelenítésének tesztelése.
+
+---
+
+# Tesztelési forgatókönyvek
+
+## Bejelentkezési felület:
+- Ellenőrzés, hogy a felhasználó be tud-e jelentkezni a regisztrált adatokkal.
+- **Mezők**:
+  - Email cím: kötelező kitölteni.
+  - Jelszó: kötelező kitölteni.
+
+## Regisztrációs felület:
+- **Mezők**:
+  - Felhasználónév: egyedi, kötelező.
+  - Email cím: kötelező és egyedi.
+  - Jelszó: kötelező és meg kell egyeznie a jelszó megerősítés mezővel.
+  - Telefonszám: kötelező.
+
+## Főoldal:
+- **Navigáció**:
+  - Foglalások megtekintése: megfelelő adatok listázása.
+  - Új foglalás létrehozása: átirányítás az új foglalás oldalra.
+  - Kijelentkezés: a felhasználó sikeres kijelentkeztetése.
+
+## Foglalás hozzáadása:
+- **Mezők**:
+  - Mosógép kiválasztása.
+  - Kezdési időpont kiválasztása.
+- **Gombok**:
+  - Mentés: a foglalás adatai mentésre kerülnek.
+  - Törlés: az eddig bevitt adatok törlése az űrlapból.
+
+## Foglalások megtekintése:
+- Foglalások listázása időrendben.
+- Szűrés lehetősége dátum vagy mosógép alapján.
+
+## Foglalás törlése:
+- A felhasználó által kiválasztott foglalás törlése.
+- Visszajelzés a sikeres műveletről.
+
+## Adminisztrátori felület:
+- Felhasználók listázása.
+- Felhasználók és foglalások törlése.
+- Mosógépek állapotának kezelése.
+
+---
+
+# Tesztelési környezet
+- **Böngészők**: Chrome, Firefox, Edge.
+- **Operációs rendszerek**: Windows, macOS, Linux.
+- **Adatbázis**: MySQL.
+- **Webszerver**: XAMPP környezet Apache támogatással.
+
+
+# 11. Telepítési terv
+
+## 11.1 Szerver oldalon
+A következő lépésekkel biztosítjuk a rendszer sikeres telepítését a szerver oldalon:
+
+1. **Operációs rendszer telepítése**:
+   - Windows, Linux vagy macOS operációs rendszer telepítése a szerver hardverre.
+   
+2. **Hálózati és internetes beállítások**:
+   - Stabil internetkapcsolat biztosítása és hálózati konfiguráció beállítása.
+
+3. **XAMPP telepítése és konfigurálása**:
+   - A XAMPP csomag telepítése, amely magában foglalja az Apache webszervert, PHP futtatókörnyezetet és MySQL adatbázist.
+   - Az Apache konfigurálása a `httpd.conf` fájlban:
+     - Alapértelmezett 80-as port beállítása.
+     - Dokumentumgyökér (`DocumentRoot`) mappájának meghatározása a projektfájlokhoz.
+   - MySQL adatbázis konfiguráció:
+     - Alapértelmezett 3306-os port használata.
+     - Felhasználói jogosultságok beállítása (pl. `root` felhasználóhoz jelszó társítása).
+     - A projekt adatbázisának létrehozása és az adattáblák importálása.
+
+4. **PHP konfigurálása**:
+   - A `php.ini` fájl beállításainak testreszabása:
+     - Hibaüzenetek megjelenítése fejlesztői környezetben.
+     - Maximalizált memóriahasználat és futásidő növelése szükség esetén.
+
+5. **Tűzfal beállítások**:
+   - A 80-as (HTTP) és 3306-os (MySQL) portok engedélyezése a tűzfalon.
+
+## 11.2 Kliens oldalon
+Az alkalmazás kliensoldali telepítéséhez a következő lépéseket végezzük el:
+
+1. **Webböngésző telepítése**:
+   - Bármely modern webböngésző (Google Chrome, Firefox, Microsoft Edge) telepítése és használata.
+
+2. **Internethozzáférés biztosítása**:
+   - Stabil és gyors internetkapcsolat elérése a webalkalmazás megfelelő működéséhez.
+
+3. **Kliens oldali teszteléshez eszközök előkészítése**:
+   - A böngésző fejlesztői eszközeinek használata a hibák és problémák lokalizálásához.
+
+---
+
+# 12. Karbantartási terv
+
+A rendszer hosszú távú fenntarthatóságának biztosítására a következő karbantartási lépéseket végezzük:
+
+1. **Átfogó tesztelések**:
+   - Rendszeres tesztelés a jelentős böngésző- és operációsrendszer-frissítések után, hogy a kompatibilitás fennmaradjon.
+
+2. **Felhasználói visszajelzések kezelése**:
+   - Bejelentett hibák és felhasználói panaszok kivizsgálása.
+   - Az ügyféllel való kommunikáció folyamatos biztosítása az elégedettség érdekében.
+
+3. **Új funkciók implementálása**:
+   - A rendszer bővítése a felhasználói igények és a piaci trendek alapján.
+   - Új foglalási lehetőségek vagy adminisztratív funkciók bevezetése.
+
+4. **Adatbázis karbantartás és mentések**:
+   - Időszakos adatbázis-optimalizálás az adatok lekérdezési sebességének fenntartásához.
+   - Napi vagy heti rendszerességű biztonsági mentések készítése az adatvesztés elkerülése érdekében.
+
+5. **Biztonsági ellenőrzések**:
+   - A rendszer rendszeres biztonsági auditálása a sebezhetőségek felderítésére.
+   - HTTPS protokoll és SSL tanúsítvány használatának fenntartása a kliens-szerver kommunikáció titkosítása érdekében.
+
